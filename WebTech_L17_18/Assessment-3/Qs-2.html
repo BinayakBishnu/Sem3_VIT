@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Exercise 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body>
+    <div ng-app="myShoppingList" ng-cloak ng-controller="myCtrl" style="max-width:400px;">
+        <header>
+            <h3>Books</h3>
+        </header>
+        <ul>
+            <li ng-repeat="x in products">
+                {{x}}
+                <span ngclick="removeItem($index)" style="cursor:pointer;">&nbsp x</span>
+            </li>
+        </ul>
+        <div>
+            <div>
+                <div>
+                    <input placeholder="Add books here" ng-model="addMe">
+                </div>
+                <div>
+                    <button ng-click="addItem()">Add</button>
+                </div>
+            </div>
+            <p style="color:red">{{errortext}}</p>
+        </div>
+    </div>
+    <script>
+        var app = angular.module("myShoppingList", []);
+        app.controller("myCtrl", function ($scope) {
+            $scope.products = ["Web Technologies Simplified", "Ron Larsen", "Stats for College", "TOC Easy"];
+            $scope.addItem = function () {
+                $scope.errortext = "";
+                if (!$scope.addMe) {
+                    $scope.errortext = "Add something";
+                    return;
+                }
+                if ($scope.products.indexOf($scope.addMe) == -1) {
+                    $scope.products.push($scope.addMe);
+                }
+                else {
+                    $scope.errortext = "The item is already in your shopping list.";
+                }
+            }
+            $scope.removeItem = function (x) {
+                $scope.errortext = "";
+                $scope.products.splice(x, 1);
+            }
+        });
+    </script>
+</body>
+
+</html>

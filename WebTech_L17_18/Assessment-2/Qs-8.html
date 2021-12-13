@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Exercise 8</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body align="center">
+    <label for="todo_input">Enter todo to add/delete</label>
+    <input type="text" id="todo_input" name="todo_input" placeholder="Enter here" onfocus="this.value=''" />
+    <br /><br />
+
+    <input type="submit" id="add" name="add" value="Add" />
+    <input type="submit" id="delete" name="delete" value="Delete" />
+    <br /><br />
+
+    <ul id="list" style="list-style-type: none; margin:0px; padding:0px">
+        <li id="dummy_todo">Todos appear here</li>
+    </ul>
+
+    <script type="text/javascript">
+        function colour_() {
+            var listItems = $("#list li");
+            var tog = 0;
+            for (let li of listItems) {
+                // console.log(li);
+                // console.log($(li));
+                let product = $(li);
+                // console.log(product.text());
+                if (tog == 0) {
+                    product.css({
+                        "background-color": "green",
+                    });
+                    tog = 1;
+                }
+                else if (tog == 1) {
+                    product.css({
+                        "background-color": "yellow",
+                    });
+                    tog = 0;
+                }
+            }
+        }
+
+        $("#add").click(function () {
+            $("#dummy_todo").remove();
+            var todo = $("#todo_input").val();
+            console.log("Todo: " + todo);
+
+            $('#list').append("<li>" + todo + "</li>");
+
+            console.log("Adding...");
+            $("#todo_input").val(this.placeholder);
+
+            colour_();
+        })
+
+        $("#delete").click(function () {
+            var listItems = $("#list li");
+            for (let li of listItems) {
+                let product = $(li);
+                console.log("Todo iterated over " + product.text() + " at " + product.index());
+
+                var todo_del = $("#todo_input").val();
+                console.log("Input: " + todo_del);
+                console.log("product.text(): " + product.text());
+
+                console.log(product.text().toLowerCase() === todo_del.toLowerCase());
+                var bool_ = product.text().toLowerCase() === todo_del.toLowerCase();
+                if (bool_) {
+                    console.log("Todo to delete: " + todo_del);
+                    $(product).remove();
+                    break;
+                }
+            }
+            $("#todo_input").val(this.placeholder);
+
+            colour_();
+        })
+    </script>
+</body>
+
+</html>

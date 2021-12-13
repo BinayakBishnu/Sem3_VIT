@@ -1,0 +1,113 @@
+<html>
+
+<head>
+    <title>19BIT0244 Question 5</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="Qs-5weather.js"></script>
+    <script src="Qs-5weatherdata.json"></script>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        li {
+            float: left;
+            margin: 2%;
+            padding: 0.1%;
+        }
+
+        li a {
+            display: block;
+            color: black;
+            font-weight: bolder;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .active {
+            background-color: black;
+            border-radius: 5px;
+            color: white;
+        }
+
+        h1 {
+            margin-left: 39%;
+        }
+
+        input {
+            width: 50%;
+            padding: 9px;
+            border-radius: 5px;
+            background-color: chartreuse;
+            margin-left: 24%;
+        }
+
+        button {
+            background-color: black;
+            border-radius: 5px;
+            color: white;
+            width: 12%;
+            padding: 7px;
+            outline: none;
+            transition: 0.5s;
+            margin-left: 42%;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #bbac58;
+            transition: 0.5s;
+        }
+
+        .show {
+            margin-top: 10%;
+            margin-left: 24%;
+            margin-bottom: 0;
+            background-color: rgb(243, 236, 236);
+            width: 50%;
+            border-radius: 20px;
+            height: 27.3%;
+        }
+
+        h2,
+        h3 {
+            margin-left: 2%;
+            margin-top: 2%;
+        }
+    </style>
+</head>
+
+<body ng-app="weather-app">
+
+    <h1> Yahoo Weather!</h1>
+    <input type="text" id="name" placeholder="Enter City Name" class="city" required><br><br>
+    <input type="text" placeholder="Enter State Name" class="state" required><br><br>
+    <button>Submit</button>
+    <show>
+        <div class="show">
+            <h2></h2>
+            <h3 class="one"></h3>
+            <h3 class="two"></h3>
+        </div>
+    </show>
+
+    <!-- <script>
+        var app1 = angular.module('weather-app', []);
+        app1.directive('show', function () {
+            var lin;
+            lin = function (scope, element, attrs) {
+                document.querySelector("button").addEventListener('click', () => {
+                    alert("clicked");
+                });
+            }
+        });
+    </script> -->
+
+</body>
+
+</html>

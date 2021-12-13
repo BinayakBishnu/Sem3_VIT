@@ -1,0 +1,111 @@
+<html>
+
+<head>
+    <title>Exercise 5</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular-route.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <style>
+        ul {
+            list-style-type: none;
+            margin-top: 0;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        li {
+            float: left;
+            margin: 2%;
+            border-radius: 5px;
+            padding: 0.1%;
+        }
+
+        li:hover {
+            background-color: rgb(218, 217, 214);
+        }
+
+        li a {
+            display: block;
+            color: black;
+            font-weight: bolder;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .active {
+            background-color: black;
+            border-radius: 5px;
+            color: white;
+        }
+
+        h1 {
+            margin: 2%;
+        }
+
+        input {
+            width: 50%;
+            padding: 9px;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(236, 244, 247);
+            margin-left: 2%;
+        }
+
+        button {
+            background-color: black;
+            border-radius: 5px;
+            color: white;
+            border: none;
+            width: 7%;
+            padding: 7px;
+            outline: none;
+            transition: 0.5s;
+            margin-left: 2%;
+        }
+
+        .show {
+            margin-top: 10%;
+            margin-left: 2%;
+            margin-bottom: 0;
+            background-color: rgb(243, 236, 236);
+            width: 96%;
+            height: 28.5%;
+        }
+
+        h2,
+        h3 {
+            margin-left: 2%;
+            margin-top: 2%;
+        }
+    </style>
+</head>
+
+<body ng-app="app">
+    <ul>
+        <li> <a href="#!weather" class="active">Weather</a> </li>
+        <li> <a href="#!movie">Movie details</a></li>
+        <li><a href="#!currency">Currency Rates</a></li>
+    </ul>
+    <div ng-view></div>
+
+    <script>
+        var app = angular.module("app", ["ngRoute"]);
+        app.config(function ($routeProvider) {
+            $routeProvider
+                .when("/weather", {
+                    templateUrl: "Qs-5weather.html"
+                })
+                .when("/movie", {
+                    templateUrl: "moviedetail.html"
+                })
+                .when("/currency", {
+                    templateUrl: "currencydetail.html"
+                });
+        });
+    </script>
+</body>
+
+</html>

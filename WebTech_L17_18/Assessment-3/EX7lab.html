@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_SharedWithUsers msdt:dt="string">Fall 2021-ITA1006-Computer Networks-F1+TF1-Prof.Vijayan.R Members</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_SharedWithUsers>
+<mso:SharedWithUsers msdt:dt="string">79;#Fall 2021-ITA1006-Computer Networks-F1+TF1-Prof.Vijayan.R Members</mso:SharedWithUsers>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body ng-app="myApp" ng-controller="jsCtrl1">
+Name of Food: <input id="foodname" type="text" ng-model="foodname"/>
+Food Group:
+<select id="foodgroup">
+<option>dairy</option>
+<option>fats</option>
+<option>fruit</option>
+<option>meat</option>
+<option>veggies</option>
+</select>
+<button id="eat" ng-click="remove()">Eat!</button>
+
+<p>
+<img src="cookie.jpg" class="food fats" alt="cookie" ng-model="cookie" ng-hide="cookie"/>
+<img src="apple.jpg" class="fruit yummy food" alt="apple" ng-model="apple" ng-hide="apple"/>
+<img src="broccoli.jpg" class="food veggies" alt="broccoli" ng-model="broccoli" ng-hide="broccoli"/>
+<img src="tomato.jpg" class="fruit food" alt="tomato" ng-hide="tomato" ng-model="tomato"/>
+<img src="steak.jpg" class="food meat" alt="steak" ng-hide="steak" ng-model="steak"/>
+<img src="milk.jpg" class="food dairy" alt="milk" ng-hide="milk"ng-model="milk"/>
+<img src="chips.jpg" class="fats food other" alt="chips" ng-hide="chips"ng-model="chips"/>
+</p>
+<p>{{arrvalue}}</p>
+<script>
+var app = angular.module('myApp', []);
+app.controller('jsCtrl1', function($scope) {
+$scope.foodname="";
+$scope.remove=function(){
+switch($scope.foodname) {
+  case 'cookie':
+    $scope.cookie="true";
+    break;
+  case 'apple':
+    $scope.apple="true";
+    break;
+ case 'tomato':
+    $scope.tomato="true";
+    break;
+ case 'milk':
+    $scope.milk="true";
+    break;
+ case 'chips':
+    $scope.chips="true";
+    break;
+  case 'steak':
+    $scope.steak="true";
+    break;
+  case '':
+    $scope.steak="true";
+    break;
+  }
+}   });
+</script>
+</body>
+</html>

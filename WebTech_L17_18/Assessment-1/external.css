@@ -1,0 +1,21 @@
+body{
+text-align:right;
+color:#45ffab;
+background-color:#73cba3;
+}
+
+div{
+background-color:orange;
+margin-left:160px;
+}
+
+h2{
+text-align:left;
+padding-left: 20px;
+}
+
+p{
+text-align:justify;
+padding-left:40px;
+margin-left:50px;
+}

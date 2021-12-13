@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body>
+    <!-- <h1>Hello</h1>
+    <div ng-app="">
+        <p>Enter name: <input type="text" ng-model="name" /></p>
+        <p>Welcome <span ng-bind="name"></span>!</p>
+    </div> -->
+    <!-- <h1>Hello</h1>
+    <div ng-app="">
+        <p>Enter name: <input type="text" ng-model="name" /></p>
+        <p>Welcome {{name}}!</p>
+    </div> -->
+    <!-- <h1>Hello</h1>
+    <div ng-app="" ng-init="fname='Binayak'">
+        <p>Welcome {{fname}}!</p>
+    </div> -->
+    <!-- <h1>Hello</h1>
+    <div ng-app="" ng-init="col='blue'">
+        <p style="background-color:{{col}};" ng-bind="col">Welcome {{fname}}!</p>
+    </div> -->
+    <!-- <div ng-app="" ng-init="a=45;b=90">
+        <p>Product is: {{a*b}}</p>
+    </div> -->
+    <!-- <div ng-app="" ng-init="details = {'name':'Binayak','age':'19'}">
+        <p>{{details.age}}</p>
+    </div> -->
+    <!-- <div ng-app="" ng-init="details = [
+    {name:'Binayak',age:'19'},
+    {name:'Bishnu',age:'17'},
+    {name:'Neon',age:'18'}]">
+        <ul>
+            <li ng-repeat="x in details">
+                {{x.name + ',' + x.age}}
+            </li>
+        </ul>
+    </div> -->
+    <!-- <div ng-app="" ng-init="details = [3,1,8,2]">
+        <ul>
+            <li ng-repeat="x in details">
+                {{x}}
+            </li>
+        </ul>
+    </div> -->
+    <!-- <div ng-app="myApp" ng-controller="myCtrl">
+        Fname: <input type="text" ng-model="fname" /><br />
+        Lname: <input type="text" ng-model="lname" /><br />
+        {{fname + " " + lname}}
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl',function($scope){
+            $scope.fname = "";
+            $scope.lname = "Bishnu";
+        })
+    </script> -->
+    <!-- <div ng-app="myApp" ng-controller="shape" >
+        <p>{{message}} {{type}}</p>
+        <div ng-controller="circle" >
+            <p>{{message}} {{type}}</p>
+        </div>
+        <div ng-controller="square" >
+            <p>{{message}} {{type}}</p>
+        </div>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('shape', function($scope){
+            $scope.message = "in shape";
+            $scope.type = "common shape";
+        })
+        app.controller('circle', function($scope){
+            $scope.message = "in circle";
+            // $scope.type = "circle shape";
+        })
+        app.controller('square', function($scope){
+            $scope.message = "in square";
+            $scope.type = "square shape";
+        })
+    </script> -->
+
+    <!--! Form validation -->
+    <!-- <h2>AngularJS Sample Application</h2>
+    <div ng-app="mainApp" ng-controller="studentController">
+        <form name="studentForm" novalidate>
+            <table border="0">
+                <tr>
+                    <td>Enter first name:</td>
+                    <td><input name="firstname" type="text" ng-model="firstName" required>
+                        <span style="color:red" ng-show="studentForm.firstname.$dirty && studentForm.firstname.$invalid">
+                            <span ng-show="studentForm.firstname.$error.required">First Name
+                                is required.</span>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Enter last name: </td>
+                    <td><input name="lastname" type="text" ng-model="lastName" required>
+                        <span style="color:red" ng-show="studentForm.lastname.$dirty && studentForm.lastname.$invalid">
+                            <span ng-show="studentForm.lastname.$error.required">Last Name is
+                                required.</span>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email: </td>
+                    <td><input name="email" type="email" ng-model="email" length="100" required>
+                        <span style="color:red" ng-show="studentForm.email.$dirty && studentForm.email.$invalid">
+                            <span ng-show="studentForm.email.$error.required">Email is
+                                required.</span>
+                            <span ng-show="studentForm.email.$error.email">Invalid email
+                                address.</span>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button ng-click="reset()">Reset</button>
+                    </td>
+                    <td>
+                        <button ng-disabled="studentForm.firstname.$dirty && studentForm.firstname.$invalid || studentForm.lastname.$dirty && studentForm.lastname.$invalid || studentForm.email.$dirty && studentForm.email.$invalid" ng-click="submit()">Submit</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script>
+        var mainApp = angular.module("mainApp", []);
+        mainApp.controller('studentController', function ($scope) {
+            $scope.reset = function () {
+                $scope.firstName = "Mahesh";
+                $scope.lastName = "Parashar";
+                $scope.email = "MaheshParashar@tutorialspoint.com";
+            }
+            $scope.reset();
+        });
+    </script> -->
+
+    <!-- <div ng-app="myApp" ng-controller="myCtrl">
+        <input type="button" value="Add" ng-click="count=count+1" />
+        <p>{{count}}</p>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope) {
+            $scope.count = 0;
+        });
+    </script> -->
+    <!-- <div ng-app="myApp" ng-controller="myCtrl">
+        <input type="button" value="Add" ng-click="function_count()" />
+        <p>{{count}}</p>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope) {
+            $scope.count = 0;
+            $scope.function_count = function(){
+                $scope.count++;
+            }
+            // $scope.function_count();
+        });
+    </script> -->
+
+    <!-- <div ng-app="MyApp" ng-controller="MyCtrl">
+        <input type="button" value="show/hide" ng-click="MyFunc()" />
+        <div ng-show="showMe">
+            <h3>Hello everyone</h3>
+            <p>Welcome!!</p>
+        </div>
+    </div>
+    <script>
+        var app = angular.module('MyApp',[]);
+        app.controller('MyCtrl',function($scope){
+            $scope.showMe = false;
+            $scope.MyFunc = function(){
+                $scope.showMe = !$scope.showMe;
+            }
+        });
+    </script> -->
+
+    <!-- <div ng-app="myApp" ng-controller="myCtrl">
+        <form>
+            Click here:
+            <input type="checkbox" ng-model="myVar" />
+        </form>
+        <h1 ng-show="myVar">Hello</h1>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope) {
+            $scope.myVar = true;
+        })
+    </script> -->
+
+    <!-- <div ng-app="myApp" ng-controller="myCtrl">
+        Pick a topic:
+        <input type="radio" ng-model="myVar" value="dogs">Dogs
+        <input type="radio" ng-model="myVar" value="tuts">Tutorials
+        <input type="radio" ng-model="myVar" value="cars">Cars
+        <div ng-switch="myVar">
+            <div ng-switch-when="dogs">
+                <h1>Dogs</h1>
+                <p>Welcome to a world of dogs.</p>
+            </div>
+            <div ng-switch-when="tuts">
+                <h1>Tutorials</h1>
+                <p>Learn from examples.</p>
+            </div>
+            <div ng-switch-when="cars">
+                <h1>Cars</h1>
+                <p>Read about cars.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope) {
+            $scope.myVar = "dogs";
+        });
+    </script> -->
+
+    <!-- <div ng-app="myApp" ng-controller="myCtrl">
+        Pick a topic:
+        <select ng-model="myVar">
+            <option value="dogs">Dogs</option>
+            <option value="cats">Cats</option>
+            <option value="fish">Fish</option>
+        </select>
+        <div ng-switch="myVar">
+            <div ng-switch-when="dogs">
+                <h1>Dogs</h1>
+                <p>Welcome to a world of dogs.</p>
+            </div>
+            <div ng-switch-when="cats">
+                <h1>Cats</h1>
+                <p>yyyyyyyyyyy</p>
+            </div>
+            <div ng-switch-when="fish">
+                <h1>Fish</h1>
+                <p>xxxxxxxxxxxxxxxxxxx</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope) {
+            $scope.myVar = "cats";
+        });
+    </script> -->
+
+    <!-- <div ng-app="myApp" ng-controller="myCtrl">
+        <label for="fname">First name:</label>
+        <input type="text" ng-model="person.fname" /><br />
+        <label for="lname">Last name:</label>
+        <input type="text" ng-model="person.lname" /><br />
+
+        <p>{{person.fname}} {{person.lname}}</p>
+        <p>{{user.fname}} {{user.lname}}</p>
+
+        <input type="button" ng-click="copy()" value="Copy" />
+        <input type="button" ng-click="default()" value="Default" />
+        <input type="button" ng-click="reset()" value="Reset" />
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope) {
+            $scope.person = { fname: "Binayak", lname: "Bishnu" };
+            $scope.copy = function () {
+                $scope.user = angular.copy($scope.person);
+            };
+            $scope.reset = function () {
+                $scope.person.fname = "";
+                $scope.person.lname = "";
+                $scope.user = null;
+            };
+            $scope.default = function () {
+                $scope.person.fname = "Binayak";
+                $scope.person.lname = "Bishnu";
+            };
+        });
+    </script> -->
+
+    <!-- <div ng-app="">
+        <input type="email" ng-model="emailid" />
+        <p>{{emailid}}</p>
+    </div> -->
+    <!-- ! -->
+    <!-- <div ng-app="myApp" ng-controller="myCtrl">
+        <form name="myForm">
+            <p>
+                <input type="email" name="email" ng-model="email" /><br />
+                <span ng-show="myForm.email.$dirty && myForm.email.$invalid">
+                    <span ng-show="myForm.email.$error.required">Required!</span>
+                    <span ng-show="myForm.email.$error.email">Invalid</span>
+                </span>
+            </p>
+            <p>
+                <input type="password" name="password" ng-model="password" /><br />
+                <span>{{myForm.password.$untouched}}</span><br />
+            </p>
+            <p>
+                <input type='button' name="submit" value="Submit" ng-click="submit()"
+                    ng-disabled="myForm.email.$dirty && myForm.email.$invalid" />
+            </p>
+        </form>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope) {
+            $scope.email = "Binayak";
+        });
+    </script> -->
+
+    <!-- <input type="submit" /> -->
+
+    <!-- <div ng-app="myApp" ng-controller="myCtrl">
+        <p>{{myURL}}</p>
+    </div>
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function ($scope, $location) {
+            $scope.myURL = $location.absUrl();
+            $scope.myURL += "--------------" + $location.absUrl() + " " + $location.path();
+            $scope.myURL += "--------------" + $location.port();
+            $scope.myURL += "--------------" + $location.host();
+            $scope.myURL += "--------------" + $location.protocol();
+        });
+    </script> -->
+
+    <!-- <div ng-app="myApp" ng-controller="myCtrl">
+        <p>{{head2}}</p>
+        <p>{{head}}</p>
+    </div>
+    <script>
+        angular.module('myApp', []).controller('myCtrl', function ($scope, $timeout, $interval) {
+            $scope.head = "Hello!!";
+            $scope.head2 = new Date().toLocaleTimeString();
+            $interval(function () {
+                $scope.head2 = new Date().toLocaleTimeString();
+            }, 500);
+            $timeout(function () {
+                $scope.head += " Welcome";
+            }, 500);
+            $timeout(function () {
+                $scope.head += " to";
+            }, 1000);
+            $timeout(function () {
+                $scope.head += " my";
+            }, 1500);
+            $timeout(function () {
+                $scope.head += " angular";
+            }, 2000);
+            $timeout(function () {
+                $scope.head += " application";
+            }, 2500);
+            $timeout(function () {
+                $scope.head = "Hello!! Welcome to my angular";
+            }, 3000);
+            $timeout(function () {
+                $scope.head = "Hello!! Welcome to my";
+            }, 3500);
+            $timeout(function () {
+                $scope.head = "Hello!! Welcome to";
+            }, 4000);
+            $timeout(function () {
+                $scope.head = "Hello!! Welcome";
+            }, 4500);
+            $timeout(function () {
+                $scope.head = "Hello!!";
+            }, 5000);
+        }); -->
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+{
+    "weather": {
+        "name": "mumbai",
+        "state": "Maharashtra",
+        "temp": "30",
+        "condition": "breezy"
+    },
+    "weather1": {
+        "name": "vellore",
+        "state": "Tamil Nadu",
+        "temp": "40",
+        "condition": "Super Hot"
+    },
+    "weather2": {
+        "name": "Kolkata",
+        "state": "West bengal",
+        "temp": "27",
+        "condition": "Humid"
+    }
+}

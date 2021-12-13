@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exercise 3</title>
+
+    <script src="Qs-3.js"></script>
+
+    <script>
+        function check() {
+            if (document.getElementById("addr").checked == true) {
+                var cop = document.getElementById("perm").value;
+                document.getElementById("temp").value = cop;
+                document.getElementById("temp").disabled = true;
+            }
+        }
+    </script>
+
+<body>
+    <center>
+        <table style="margin-top: 10%; background-color: #efefef; padding: 24px">
+            <form name="student" onsubmit="return validate_form()">
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" name="name" /></td>
+                </tr>
+                <tr>
+                    <td>Registration Number: </td>
+                    <td><input type="text" name="regno" /></td>
+                </tr>
+                <tr>
+                    <td>DOB</td>
+                    <td><input type="text" name="dob" /></td>
+                </tr>
+                <tr>
+                    <td>Programme</td>
+                    <td><input type="text" name="program" /></td>
+                </tr>
+                <tr>
+                    <td>Email ID: </td>
+                    <td><input type="text" name="emailid" /></td>
+                </tr>
+                <tr>
+                    <td>Phone Number</td>
+                    <td><input type="number" name="phone" /></td>
+                </tr>
+                <tr>
+                    <td>Permanent Adress:</td>
+                    <td>
+                        <textarea id="perm" rows="4" cols="19">
+                        </textarea>
+                    </td>
+                </tr>
+                <tr>
+                <tr>
+                    <td colspan="2">
+                        <br>
+                        <center><input onchange="check()" id="addr" type="checkbox" value="check" />Permanent address
+                            same as temporary address</center>
+                    </td>
+                </tr>
+                </tr>
+                <tr>
+                    <td>Temporary Adress:</td>
+                    <td>
+                        <textarea id="temp" rows="4" cols="19">
+                        </textarea>
+                    </td>
+                    <td colspan="2">
+                        <br>
+                        <center><input type="submit" /></center>
+                    </td>
+                </tr>
+            </form>
+        </table>
+    </center>
+</body>
+
+</html>

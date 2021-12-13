@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form jQuery 2</title>
+</head>
+
+<body>
+    <form id="myForm">
+        <input type="text" id="name" />
+        <span id="nameerror"></span><br />
+        <input type="email" id="email" />
+        <span id="emailerror"></span><br />
+        <input type="password" id="password" />
+        <span id="passworderror"></span><br />
+
+        <input type="submit" id="submit" value="Submit" />
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $("#nameerror").hide();
+        $("emailerror").hide();
+        $("passworderror").hide();
+
+        var name_err = true;
+        var email_err = true;
+        var password_err = true;
+
+        $("#name").keyup(function () {
+            name_validation();
+        });
+        function name_validation() {
+            var name = $("#name").val();
+            if (name.length == "") {
+                $("#nameerror").show();
+                $("#nameerror").html("Please enter name");
+                name_err = false;
+                return false;
+            } else {
+                $("#nameerror").show();
+                $("#nameerror").html("Ok");
+                // $("#nameerror").hide();
+            }
+        }
+
+        $("#email").keyup(function () {
+            email_validation();
+        });
+        function email_validation() {
+            var email = $("#email").val();
+            if (email.length == "") {
+                $("#emailerror").show();
+                $("#emailerror").html("Please enter email");
+                email_err = false;
+                return false;
+            } else {
+                $("#emailerror").show();
+                $("#emailerror").html("Ok");
+                // $("#emailerror").hide();
+            }
+        }
+
+        $("#password").keyup(function () {
+            password_validation();
+        });
+        function password_validation() {
+            var password = $("#password").val();
+            if (password.length == "") {
+                $("#passworderror").show();
+                $("#passworderror").html("Please enter password");
+                password_err = false;
+                return false;
+            } else {
+                $("#passworderror").show();
+                $("#passworderror").html("Ok");
+                // $("#passworderror").hide();
+            }
+
+            if (password.length < 3 || password.length > 10) {
+                $("#passworderror").show();
+                $("#passworderror").html("Between 3 and 10");
+                password_err = false;
+                return false;
+            } else {
+                $("#passworderror").show();
+                $("#passworderror").html("Ok");
+                // $("#passworderror").hide();
+            }
+        }
+
+        $("#submit").click(function () {
+            name_err = true;
+            email_err = true;
+            password_err = true;
+
+            name_validation();
+            email_validation();
+            password_validation();
+
+            if ((name_err == true) && (email_err == true) && (password_err == true)) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+body{
+    background-image:url("pexels-pixabay-531880.jpg");
+    background-size: cover;
+}
+
+#parent{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    width:90%;
+    margin:auto;
+}
+.child{
+    background-color: rgba(0,0,0,0.5);
+    margin:auto 10px;
+    padding:0;
+    padding-bottom: 20px;
+
+    width:80%;
+}
+.child > ul{
+    width:fit-content;
+    margin:auto;
+}
+
+li{
+    margin:40px;
+
+    color:white;
+}
+
+.child > p{
+    width:fit-content;
+    margin:10px auto;
+}
+.one{
+    background-color:orange;
+    margin-top:0px;
+    padding:30px 20px;
+}
+.two{
+    background-color:magenta;
+    margin-top:0px;
+    padding:30px 20px;
+}
+.three{
+    background-color:green;
+    margin-top:0px;
+    padding:30px 20px;
+}
+
+input{
+    padding:15px 20px;
+    background-color: orange;
+    border:none;
+}
+
+

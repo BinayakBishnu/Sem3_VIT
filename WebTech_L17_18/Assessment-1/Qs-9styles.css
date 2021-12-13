@@ -1,0 +1,39 @@
+body{
+    background: grey;
+}
+#parent{
+    background:white;
+    
+    width: 80%;
+    margin:auto;
+
+    padding:20px;
+}
+#menulist{
+    color:white;
+}
+#menulist>li{
+    background-color:black;
+    display:inline;
+    padding:auto 20px;
+    margin:3px;
+}
+img{
+    display:inline;
+}
+#scoreinfo{
+    /* display:inline; */
+    display:flex;
+}
+#score{
+    background-color:green;
+    width:fit-content;
+    margin:5px;
+    padding:20px;
+
+    color:white;
+    font-size: 30px;
+}
+#scoreinfo > p{
+    width:50%;
+}

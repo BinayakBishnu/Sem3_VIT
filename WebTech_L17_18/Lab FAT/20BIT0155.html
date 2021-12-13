@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20BIT0155</title>
+</head>
+
+<body>
+    <form id="myForm" name="myForm" action="/submitted" method="POST">
+        <div>
+            <label for="customerid">Customer ID:</label>
+            <input type="text" name="customerid" id="customerid" />
+        </div>
+        <div>
+            <label for="customername">Customer:</label>
+            <input type="text" name="customername" id="customername" />
+        </div>
+        <div>
+            <label for="customeraddr">Customer Address:</label>
+            <textarea name="customeraddr" id="customeraddr"></textarea>
+        </div>
+        <div>
+            <label for="customeremail">Customer Email ID:</label>
+            <input type="email" name="customeremail" id="customeremail" />
+        </div>
+
+        <br /><br />
+
+        <div>
+            <label for="prodid">Product ID:</label>
+            <input type="text" name="prodid" id="prodid" />
+        </div>
+        <div>
+            <label for="prodname">Product:</label>
+            <input type="text" name="prodname" id="prodname" />
+        </div>
+        <div>
+            <label for="desp">Description:</label>
+            <textarea name="desp" id="desp"></textarea>
+        </div>
+        <div>
+            <label for="image">Image:</label>
+            <input type="file" id="image" name="image" />
+        </div>
+        <div>
+            <label for="price">Price:</label>
+            <input type="number" name="price" id="price" />
+        </div>
+
+        <br /><br />
+
+        <div>
+            <label for="reviewid">Review ID:</label>
+            <input type="text" name="reviewid" id="reviewid" />
+        </div>
+        <div>
+            <label for="review">Review:</label>
+            <textarea name="review" id="review"></textarea>
+        </div>
+
+        <input type="submit" name="submit" value="Submit" id="submit" />
+        <br /><br />
+
+    </form>
+
+    <div>
+        <h3>Queries</h3>
+        <form action="/part_i" method="GET">
+            <input type="submit" name="part_i" value="Part i" />
+        </form>
+        <form action="/part_ii" method="GET">
+            <input type="submit" name="part_ii" value="Part ii" />
+        </form>
+        <form action="/part_iii" method="GET">
+            <input type="submit" name="part_iii" value="Part iii" />
+        </form>
+    </div>
+</body>
+
+</html>

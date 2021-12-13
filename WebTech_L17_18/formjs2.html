@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formjs2</title>
+</head>
+
+<body>
+    <form id="form" action="/" method="GET">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" />
+            <span id="errorsname" style="color:red"></sp>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" />
+            <span id="errorspassword" style="color:red"></span>
+        </div>
+        <input type="submit" value="Submit" id="submitbtn" />
+        <div id="errors"></div>
+    </form>
+
+    <script>
+        let form = document.getElementById('form');
+        let name = document.getElementById('name');
+        let password = document.getElementById('password');
+        let errors = document.getElementById('errors');
+        let errorsname = document.getElementById('errorsname');
+        let errorspassword = document.getElementById('errorspassword');
+        
+        form.addEventListener('submit', (e) => {
+            errors.innerText = "";
+            if (name.value === '' || name.value == null) {
+                errors.innerText += "Please enter name";
+                errorsname.innerText += "Please enter name";
+            }
+            if (password.value === '' || password.value == null) {
+                errorspassword.innerText += "Please enter password";
+                errors.innerText += "\nPlease enter password";
+            }
+            else if (password.value.length <= 6) {
+                errorspassword.innerText += "Too short password";
+                errors.innerText += "\nToo short password";
+            }
+            e.preventDefault();
+        })
+    </script>
+</body>
+
+</html>

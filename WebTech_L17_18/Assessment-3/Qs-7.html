@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Exercise 7</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+
+  <style>
+    img {
+      width: 250px;
+    }
+  </style>
+</head>
+
+<body ng-app="myApp" ng-controller="jsCtrl1">
+  Name of Food: <input id="foodname" type="text" ng-model="foodname" />
+  Food Group:
+  <select id="foodgroup" ng-model="foodgroupdrop">
+    <option value="dairy">dairy</option>
+    <option value="fats">fats</option>
+    <option value="fruit">fruit</option>
+    <option value="meat">meat</option>
+    <option value="veggies">veggies</option>
+  </select>
+
+  <button id="eat" ng-click="remove()">Eat!</button>
+
+  <h2><i>{{errorcombo}}</i></h2>
+  <p>
+    <img src="cookie.jpg" class="food fats" alt="cookie" ng-model="cookie" ng-hide="cookie" />
+    <img src="apple.jpg" class="food fruit yummy" alt="apple" ng-model="apple" ng-hide="apple" />
+    <img src="broccoli.jpg" class="food veggies" alt="broccoli" ng-model="broccoli" ng-hide="broccoli" />
+    <img src="tomato.jpg" class="fruit food" alt="tomato" ng-model="tomato" ng-hide="tomato" />
+    <img src="steak.jpg" class="food meat" alt="steak" ng-model="steak" ng-hide="steak" />
+    <img src="milk.jpg" class="food dairy" alt="milk" ng-model="milk" ng-hide="milk" />
+    <img src="chips.jpg" class="food fats other" alt="chips" ng-model="chips" ng-hide="chips" />
+  </p>
+  <p>{{arrvalue}}</p>
+  <script>
+    var app = angular.module('myApp', []);
+    app.controller('jsCtrl1', function ($scope) {
+      $scope.foodname = "";
+
+      $scope.foodgroupdrop = "";
+
+
+      $scope.remove = function () {
+        $scope.combinedchoice = $scope.foodname + $scope.foodgroupdrop;
+        if ($scope.combinedchoice == "") {
+          $scope.combinedchoice = "none chosen";
+        }
+        console.log($scope.combinedchoice);
+
+        switch ($scope.combinedchoice) {
+          case 'cookiefats':
+            $scope.cookie = "true";
+            $scope.errorcombo = "";
+            break;
+          case 'applefruit':
+            $scope.apple = "true";
+            $scope.errorcombo = "";
+            break;
+          case 'tomatofruit':
+            $scope.tomato = "true";
+            $scope.errorcombo = "";
+            break;
+          case 'milkdairy':
+            $scope.milk = "true";
+            $scope.errorcombo = "";
+            break;
+          case 'chipsfats':
+            $scope.chips = "true";
+            $scope.errorcombo = "";
+            break;
+          case 'steakmeat':
+            $scope.steak = "true";
+            $scope.errorcombo = "";
+            break;
+          case 'none chosen':
+            $scope.errorcombo = "Please choose!!";
+            break;
+          default:
+            $scope.errorcombo = "Wrong combo!!";
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

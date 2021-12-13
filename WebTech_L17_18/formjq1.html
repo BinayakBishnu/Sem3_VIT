@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form jQuery</title>
+</head>
+
+<body>
+    <form id="myForm">
+        <input type="text" id="name" />
+        <p id="nameerror"></p>
+        <input type="email" id="email" />
+        <p id="emailerror"></p>
+        <input type="password" id="password" />
+        <p id="passworderror"></p>
+
+        <input type="submit" id="submit" value="Submit" />
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $("#myForm").submit(function (event) {
+            // event.preventDefault();
+
+            var name = $("#name").val();
+            var email = $("#email").val();
+            var password = $("#password").val();
+            var flag = 1;
+
+            if (name.length == "") {
+                $("#nameerror").text("Please enter name");
+                $("#name").focus();
+                // return false;
+                flag = 0;
+            }
+            if (email.length == "") {
+                $("#emailerror").text("Please enter email");
+                $("#email").focus();
+                // return false;
+                flag = 0;
+            }
+            if (password.length == "") {
+                $("#passworderror").text("Please enter password");
+                $("#password").focus();
+                // return false;
+                flag = 0;
+            }
+            if (!flag) {
+                return false;
+            }
+            else if (flag) {
+                alert("Ok");
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exercise 1</title>
+</head>
+
+<body style="margin:0%;padding:0%">
+    <div align="center" style="padding-top:1%;">
+        <form>
+            <input type="button" value="Print receipt" id="receiptbtn" name="receipt_button" onClick="btn()" />
+        </form>
+    </div>
+
+    <script>
+        function btn() {
+            var hrs_input = prompt("Enter number of hours in parking", 3);
+            var hours = parseFloat(hrs_input);
+            var hrs_yesterday = prompt("Enter amount charged yesterday (in $)");
+            var amt_yesterday = parseFloat(hrs_yesterday);
+            calculate_Charges(hours, amt_yesterday);
+        }
+        function calculate_Charges(hours, yesterday) {
+            // alert(hours);
+            if (hours <= 3) {
+                var total = 2.0 + yesterday;
+                alert('Hours: ' + hours + '\nToday\'s total is: $2.00' + '\nTotal is: $' + total);
+            }
+            else if (hours >= 3 && hours <= 24) {
+                var calculation = (hours - 3) * 0.5 + 2;
+                if (calculation > 10) {
+                    var total = 10.0 + yesterday;
+                    alert('Hours: ' + hours + '\nToday\'s total is: $10.00' + '\nTotal is: $' + total);
+                } else {
+                    var total = calculation + yesterday;
+                    alert('Hours: ' + hours + '\nToday\'s total is: $' + calculation.toFixed(2)
+                        + '\nTotal is: $' + total);
+                }
+            }
+            else if (hours > 24) {
+                alert('Invalid');
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+
+<body>
+    <div id="printing1"></div>
+    <div id="printing2"></div>
+    <div id="jsonstring1"></div>
+    <div id="jsonstring2"></div>
+    <div id="jsonparse1"></div>
+
+    <script type="text/javascript">
+        var obj = {
+            "name": "John",
+            "cars": ["Fiat", "BMW", "Alto"],
+        };
+
+        for (var i in obj.cars) {
+            document.getElementById("printing1").innerHTML += (obj.cars[i] + "<br />");
+        }
+        var obj2 = {
+            "name": "John",
+            "cars": [
+                {
+                    "carname": "Fiat",
+                    "model": ["a", "b"]
+                },
+                {
+                    "carname": "Ford",
+                    "model": ["d", "e"]
+                },
+            ],
+        };
+
+        for (var i in obj2.cars) {
+            document.getElementById("printing2").innerHTML += ("<h1>" + obj2.cars[i].carname + "</h1>" + "<br />");
+            for (j in obj2.cars[i].model) {
+                document.getElementById("printing2").innerHTML += (obj2.cars[i].model[j] + "<br />")
+            }
+        }
+        var json_ = JSON.stringify(obj)
+        document.getElementById("jsonstring1").innerHTML = json_ + "<br />";
+        var json_2 = JSON.stringify(obj2)
+        document.getElementById("jsonstring2").innerHTML = json_2 + "<br />";
+
+        var obj3 = JSON.parse(json_2);
+        document.getElementById("jsonparse1").innerHTML = obj3 + "<br />";
+        document.getElementById("jsonparse1").innerHTML += (obj3.cars + "<br />");
+        document.getElementById("jsonparse1").innerHTML += (obj3.cars[0].carname + "<br />");
+        document.getElementById("jsonparse1").innerHTML += (obj3.cars[0].model + "<br />");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>
+            html form javascript
+        </title>
+        <script>
+        function takevalue()
+        {
+            var fname=document.getElementById("firname").value;
+            var sname=document.getElementById("secname").value;
+            var email=document.getElementById("mails").value;
+            document.write("YOUR INFO : <BR>"+"FIRST NAME : "+fname+"<br>");
+            document.write("SECOND NAME : "+sname+"<br>");
+            document.write("EMAIL : "+email+"<br>");
+           
+
+        }
+        </script>
+
+    </head>
+    <body>
+        <h1 style="color:peru;font-variant:small-caps">Please Enter the Details</h1>
+        <table>
+            <form onsubmit="takevalue()">
+                <tr>
+                    <th>
+                       First Name :
+                    </th>
+                    <th>
+                        <input type="text" id="firname" placeholder="first name...."/>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        Second Name :
+                    </th>
+                    <th>
+                        <input type="text" id="secname" placeholder="second name...."/>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+                        Email :
+                    </th>
+                    <th>
+                        <input type="email" id="mails" placeholder="mail...."/>
+                    </th>
+                    </tr>
+                    <!-- NOW WE NEED TO ADD SUBMIT BUTTON -->
+                <tr>
+                    <th>
+                        <input type="submit">
+                    </th>
+                </tr>    
+            </form>
+        </table>
+    </body>
+</html>
+
+// SO THAT WAS ALL IN THIS VIDEO !!! 
+// NOTE ! Instead of using ID , you can also use CLASS OR NAME 

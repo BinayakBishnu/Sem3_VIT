@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Exercise 6</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+</head>
+
+<body>
+
+    <div ng-app="myApp" ng-controller="jsCtrl">
+        <h1>Plan-It!</h1>
+        <p>
+            Click the button to generate a random 3-meal menu plan!
+            <button id="day-btn" ng-click="fetchmenu()">Fetch Random Menu</button>
+        </p>
+        <section id="day-results" class="hidden">
+            <p>Rand index generated breakfast: {{rand_index_generated_breakfast}}</p>
+            <p>Rand index generated lunch: {{rand_index_generated_lunch}}</p>
+            <p>Rand index generated dinner: {{rand_index_generated_dinner}}</p>
+            <p>See console.log for other details</p>
+            <article id="breakfast">
+                <h2><span class="name">{{breakfastname}}</span> (Breakfast)</h2>
+                <hr>
+                <p class="description">{{breakfastdesc}}</p>
+                <p>Food Groups:</p>
+                <ul class="food-groups">
+                    <!-- <li ng-hide="myvar" ng-repeat="x in foodmenu.breakfast.foodgroups">{{x}}</li> -->
+                    <li ng-hide="myvar" ng-repeat="x in breakfastgrps">{{x}}</li>
+                </ul>
+            </article>
+            <article id="lunch">
+                <h2><span class="name">{{lunchname}}</span> (Lunch)</h2>
+                <hr>
+                <p class="description">{{lunchdesc}}</p>
+                <p>Food Groups:</p>
+                <ul class="food-groups">
+                    <li ng-hide="myvar" ng-repeat="y in lunchgrps">{{y}}</li>
+                </ul>
+            </article>
+            <article id="dinner">
+                <h2><span class="name">{{dinnername}}</span> (Dinner)</h2>
+                <hr>
+                <p class="description">{{dinnerdesc}}</p>
+                <p>Food Groups:</p>
+                <ul class="food-groups">
+                    <li ng-hide="myvar" ng-repeat="z in dinnergrps">{{z}}</li>
+                </ul>
+            </article>
+        </section>
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('jsCtrl', function ($scope) {
+            $scope.foodmenu = {
+                "breakfast": [
+                    {
+                        "name": "Blueberry Oatmeal",
+                        "description": "One cup of hot oatmeal with 1/4 cup of fresh blueberries.",
+                        "foodgroups": ["Grains", "Fruit"]
+                    },
+                    {
+                        "name": "Bread",
+                        "description": "Bread with butter, cheese or jam",
+                        "foodgroups": ["Bread", "Butter", "Cheese", "Jam"]
+                    },
+                    {
+                        "name": "Roti for breakfast",
+                        "description": "Indian torilla with vegetables",
+                        "foodgroups": ["Grains", "Vegetables"],
+                    },
+                ],
+                "lunch": [
+                    {
+                        "name": "Froot Loops",
+                        "description": "A baggy of rainbow Froot Loops - a classic college student lunch.",
+                        "foodgroups": ["Grains"],
+                    },
+                    {
+                        "name": "Rice",
+                        "description": "Rice with other complements",
+                        "foodgroups": ["Grains"],
+                    },
+                    {
+                        "name": "Spaghetti for lunch",
+                        "description": "Two pies made with love and filled full of flavors. Blueberry, strawberry, you name it, you have it!",
+                        "foodgroups": ["Grains", "Fruit"],
+                    },
+                ],
+                "dinner": [
+                    {
+                        "name": "Spaghetti with Tomato Sauce",
+                        "description": "Two pies made with love and filled full of flavors. Blueberry, strawberry, you name it, you have it!",
+                        "foodgroups": ["Grains", "Fruit"],
+                    },
+                    {
+                        "name": "Roti",
+                        "description": "Indian torilla with vegetables",
+                        "foodgroups": ["Grains", "Vegetables"],
+                    },
+                    {
+                        "name": "Rice for dinner",
+                        "description": "Rice with other complements",
+                        "foodgroups": ["Grains"],
+                    },
+                ],
+            };
+            var i = 0;
+            var j = 0;
+            $scope.myvar = true;
+            $scope.fetchmenu = function () {
+                $scope.myvar = false;
+                $scope.fgps = "";
+                // console.log($scope.foodmenu)
+                // for (i in $scope.foodmenu) {
+                // console.log(i);
+                console.log($scope.foodmenu);
+
+                var rand_index_breakfast = Math.floor((Math.random() * 3) + 0);
+                console.log(rand_index_breakfast);
+                $scope.rand_index_generated_breakfast = rand_index_breakfast;
+
+                console.log($scope.foodmenu['breakfast']);
+                console.log($scope.foodmenu['breakfast'][rand_index_breakfast]);
+                console.log($scope.foodmenu['breakfast'][rand_index_breakfast].name);
+                $scope.breakfastname = $scope.foodmenu['breakfast'][rand_index_breakfast].name;
+                $scope.breakfastdesc = $scope.foodmenu['breakfast'][rand_index_breakfast].description;
+                $scope.breakfastgrps = $scope.foodmenu['breakfast'][rand_index_breakfast].foodgroups;
+
+                var rand_index_lunch = Math.floor((Math.random() * 3) + 0);
+                console.log(rand_index_lunch);
+                $scope.rand_index_generated_lunch = rand_index_lunch;
+
+                console.log($scope.foodmenu['lunch']);
+                console.log($scope.foodmenu['lunch'][rand_index_breakfast]);
+                console.log($scope.foodmenu['lunch'][rand_index_breakfast].name);
+                $scope.lunchname = $scope.foodmenu['lunch'][rand_index_lunch].name;
+                $scope.lunchdesc = $scope.foodmenu['lunch'][rand_index_lunch].description;
+                $scope.lunchgrps = $scope.foodmenu['lunch'][rand_index_lunch].foodgroups;
+
+                var rand_index_dinner = Math.floor((Math.random() * 3) + 0);
+                console.log(rand_index_dinner);
+                $scope.rand_index_generated_dinner = rand_index_dinner;
+
+                console.log($scope.foodmenu['dinner']);
+                console.log($scope.foodmenu['dinner'][rand_index_dinner]);
+                console.log($scope.foodmenu['dinner'][rand_index_dinner].name);
+                $scope.dinnername = $scope.foodmenu['dinner'][rand_index_dinner].name;
+                $scope.dinnerdesc = $scope.foodmenu['dinner'][rand_index_dinner].description;
+                $scope.dinnergrps = $scope.foodmenu['dinner'][rand_index_dinner].foodgroups;
+                // }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exercise 1</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        td {
+            text-align: left;
+            color: black;
+        }
+
+        th {
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <table style="border: 1px solid black;" id="detail_table">
+            <form id="form1" class="form1class" action="">
+                <thead>
+                    <tr>
+                        <td colspan="6" style="font-weight:bold; text-align:center; font-size: 2em;">
+                            Personal Details
+                        </td>
+                    </tr>
+                </thead>
+                <tr>
+                    <td><label for="student_name">Enter Name: </label></td>
+                    <td><input type="text" id="student_name" placeholder="Enter your name..." required></td>
+                </tr>
+                <tr>
+                    <td><label for="dob">Enter Date of Birth: </label></td>
+                    <td><input type="number" id="date" placeholder="Enter date..." required></td>
+                    <td><input type="number" id="month" placeholder="Enter month..." required></td>
+                    <td><input type="number" id="year" placeholder="Enter year..." required></td>
+                </tr>
+                <tr>
+                    <td><label for="parents">Enter Name of parents: </label></td>
+                    <td><input type="text" id="father" placeholder="Enter father's name..." required></td>
+                    <td><input type="text" id="mother" placeholder="Enter mother's name..." required></td>
+                </tr>
+                <tr>
+                    <td><label for="blood_group">Enter Blood Group: </label></td>
+                    <td><input type="text" id="blood_group" placeholder="Enter Blood group..." required></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Enter email: </label></td>
+                    <td><input type="text" id="email" placeholder="Enter email..." required></td>
+                </tr>
+                <tr>
+                    <td><label for="phone">Enter Contact numbers: </label></td>
+                    <td><input type="number" id="mobile_number" placeholder="Enter mobile number..." required></td>
+                    <td><input type="number" id="landline" placeholder="Enter landline number..." required></td>
+                </tr>
+                <tr>
+                    <td><label for="address">Enter Address: </label></td>
+                    <td><input type="number" id="door_no" placeholder="Enter door_no..." required></td>
+                    <td><input type="text" id="street_name" placeholder="Enter street_name..." required></td>
+                    <td><input type="text" id="place_name" placeholder="Enter place_name..." required></td>
+                    <td><input type="number" id="pincode" placeholder="Enter pincode..." required></td>
+                    <td><input type="text" id="country" placeholder="Enter country..." required></td>
+                </tr>
+                <tr>
+                    <td><label for="degree">Enter Degree: </label></td>
+                    <td><input type="text" id="UG" placeholder="Enter UG..." required></td>
+                    <td><input type="text" id="PG" placeholder="Enter PG..." required></td>
+                    <td><input type="text" id="Others" placeholder="Enter other..." required></td>
+                </tr>
+                <tfoot>
+                    <tr style="align-items: center;">
+                        <td colspan="6" style="text-align: center; padding-top: 40px">
+                            <input type="button" value="Submit" id="submit" name="submitbutton" />
+                        </td>
+                    </tr>
+                </tfoot>
+            </form>
+        </table>
+        <p id="display"></p>
+        <div id="div1"></div>
+    </center>
+    <script>
+        $(document).ready(function () {
+            $("#submit").click(function () {
+                details = [
+                    {
+                        "student_name": $("#student_name").val(),
+                        "dob":
+                        {
+                            "date": $("#date").val(),
+                            "month": $("#month").val(),
+                            "year": $("#year").val()
+                        },
+                        "parents":
+                        {
+                            "father": $("#father").val(),
+                            "mother": $("#mother").val()
+                        },
+                        "blood_group": $("#blood_group").val(),
+                        "email": $("#email").val(),
+                        "phone":
+                        {
+                            "mobile_number": $("#mobile_number").val(),
+                            "landline": $("#landline").val(),
+                        },
+                        "address":
+                        {
+                            "door_no": $("#door_no").val(),
+                            "street_name": $("#street_name").val(),
+                            "place_name": $("#place_name").val(),
+                            "pincode": $("#pincode").val(),
+                            "country": $("#country").val()
+                        },
+                        "degree":
+                        {
+                            "UG": $("#UG").val(),
+                            "PG": $("#PG").val(),
+                            "Others": $("#Others").val(),
+                        }
+                    }
+                ];
+                var tbl = $("<table/>").attr("id", "mytable");
+                $("#div1").append(tbl);
+                for (var i = 0; i < details.length; i++) {
+                    var tr = "<tr>";
+                    var td1 = "<td>" + details[i]["student_name"] + "</td>";
+                    var td2 = "<td>" + details[i]["dob"]["date"] + "-" + details[i]["dob"]["month"]
+                        + "-" + details[i]["dob"]["year"] + "</td>";
+                    var td3 = "<td>" + details[i]["parents"]["father"] + "," +
+                        details[i]["parents"]["mother"] + "</td>";
+                    var td4 = "<td>" + details[i]["blood_group"] + "</td>";
+                    var td5 = "<td>" + details[i]["email"] + "</td>";
+                    var td6 = "<td>" + details[i]["phone"]["mobile_number"] + "," +
+                        details[i]["phone"]["landline"] + "</td>";
+                    var td7 = "<td>" + details[i]["address"]["door_no"] + "," +
+                        details[i]["address"]["street_name"] + "," + details[i]["address"]["place_name"] + "," +
+                        details[i]["address"]["pincode"] + "," + details[i]["address"]["country"] + "</td>";
+                    var td8 = "<td>" + details[i]["degree"]["UG"] + "," +
+                        details[i]["degree"]["PG"] + "," + details[i]["degree"]["Others"] + "</td>";
+                    $("#mytable").append(tr + td1 + td2 + td3 + td4 + td5 + td6 + td7 + td8);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

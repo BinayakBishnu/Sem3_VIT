@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5</title>
+</head>
+
+<body>
+    Downloading progress:
+    <progress value="22" max="100">
+    </progress>
+
+    <ol>
+        <li><meter min="0" max="100" value="25">25%</meter></li>
+        <li><meter min="100" max="200" value="150">50%</meter></li>
+        <li><meter min="0" max="100" value="75">75%</meter></li>
+        <li><meter min="0" max="800" value="400">50%</meter></li>
+    </ol>
+    <dl>
+        <dt>Width:</dt>
+        <dd><meter min="0" max="200" value="123" title="millimeters">123mm</meter></dd>
+        <dt>Height:</dt>
+        <dd><meter min="0" max="100" value="25" optimum="30" title="millimeters">25mm</meter></dd>
+    </dl>
+
+    <div>
+        <dialog id="myFirstDialog" style="width:50%;background-color:#F4FFEF;border:1px 
+        dotted black;">
+            <p><q>The world is full of magical things patiently waiting for our wits to grow
+                    sharper.</q> - <cite>Bertrand Russell</cite></p>
+            <button id="hide">Close</button>
+        </dialog>
+        <!-- "Show" button -->
+        <button id="show">Show Dialog</button>
+    </div>
+    <!-- JavaScript to provide the "Show/Close" functionality -->
+    <script type="text/JavaScript">
+        (function() { 
+        var dialog = document.getElementById('myFirstDialog'); 
+        document.getElementById('show').onclick = function() { 
+        dialog.show(); 
+        }; 
+        document.getElementById('hide').onclick = function() { 
+        dialog.close(); 
+        }; 
+        })(); 
+    </script>
+
+    <p>Despite the stockmarket crash in 2008, the
+        value of my share portfolio <mark>increased by
+            100 percent</mark>. I must be doing something
+        right.</p>
+    <p>I should point out that the value only increased
+        because I kept pumping more money in!</p>
+
+
+    <details>
+        <summary>Copyright 1999-2014. (Click to expand)</summary>
+        <p> - by Refsnes Data. All Rights Reserved.</p>
+        <p>All content and graphics on this web site are the property
+            of the company Refsnes Data.</p>
+    </details>
+    <p><b>Note:</b> The summary element is not supported in
+        Edge/Internet Explorer.</p>
+
+    <p>This is a
+        veryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryveryver
+        y<wbr>longwordthatwillbreakatspecific<wbr>placeswhenthebrowserwindo
+            wisresized.</p>
+</body>
+
+</html>

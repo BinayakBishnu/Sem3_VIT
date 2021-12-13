@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Exercise 4</title>
+</head>
+
+<body>
+    <h1>Sentence Reverser!</h1>
+    <label for="user_input">Phrase: </label>
+    <input type="text" id="user_input" />
+
+    <label for="filter">Filter: </label>
+    <input type="text" id="filter" />
+
+    <br /><br />
+    <input type="button" id="go_btn" value="GO!" onClick="go()" />
+
+    <br /><br />
+    <div id="words"></div>
+    <div id="words_filtered"></div>
+
+    <script type="text/javascript">
+        function go() {
+            var user_input = document.getElementById("user_input").value;
+            // alert(user_input);
+            var input_array = user_input.split(" ");
+
+            var count_ = 0;
+            var filter_prompt = document.getElementById("filter").value;
+            for (var i = 0; i < input_array.length; i++) {
+                if (input_array[i].toLowerCase() == filter_prompt.toLowerCase()) {
+                    input_array.splice(i, 1);
+                    count_ += 1;
+                }
+            }
+            // alert(input_array);
+
+
+            var reversed_input = input_array.reverse();
+            // alert(input_array.reverse());
+            document.getElementById("words").innerHTML = "";
+            for (var i = 0; i < reversed_input.length; i++) {
+                console.log(reversed_input[i]);
+                // document.getElementById("words").innerHTML += reversed_input[i];
+                if (i % 2 == 0) {
+                    document.getElementById("words").innerHTML +=
+                        "<span class='word' style='background-color:rgba(255,180,180); border:1px dashed red; text-decoration:underline;'>"
+                        + reversed_input[i] + "</span> ";
+                }
+                else if (i % 2 != 0) {
+                    document.getElementById("words").innerHTML +=
+                        "<span class='word' style='background-color:rgba(255,180,180); border:1px dashed red;'>"
+                        + reversed_input[i] + "</span> ";
+                }
+            }
+            document.getElementById("words_filtered").innerHTML += count_ + " word(s) filtered out."
+        }
+    </script>
+</body>
+
+</html>

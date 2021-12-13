@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exercise 2</title>
+
+    <style>
+        body {
+            margin: 0%;
+            padding: 0%;
+        }
+
+        #first {
+            width: 100%;
+            height: 10vh;
+
+            display: flex;
+            justify-content: flex-end;
+
+            border: 1px solid black;
+        }
+
+        .second {
+            width: 49%;
+            float: left;
+            border: 1px solid black;
+        }
+
+        .third {
+            width: 49%;
+            float: left;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="first">
+
+        <span id="clock"></span>
+
+    </div>
+
+    <div id="container">
+
+        <div class="second" id="slider">
+            <img src="pic.png" width="250px" class="slides" />
+            <button id="left">&LessLess;</button>
+            <button id="right">&GreaterGreater;</button>
+        </div>
+
+
+        <div class="third">
+            <div id="align">
+
+                <input type="color" value="#aal1ff" id="picker" />
+
+                <br /><br />
+
+                <select id="font_family">
+                    <option selected="true">Arial</option>
+                    <option>Monospace</option>
+                    <option>Helvetica</option>
+                    <option>Letterpress</option>
+                    <option>Sans Serif</option>
+                    <option>Limon</option>
+                    <option>Vodka</option>
+                </select>
+
+                <br /><br />
+
+                <select id="size">
+                    <option selected="true">15px</option>
+                    <option>17px</option>
+                    <option>19px</option>
+                    <option>21px</option>
+                    <option>22px</option>
+                    <option>24px</option>
+                    <option>25px</option>
+                    <option>26px</option>
+                    <option>27px</option>
+                    <option>28px</option>
+                </select>
+                <br /><br />
+                <button id="apply" onClick="apply_btn()">Apply</button>
+                <p id="myP">There are many variations of passages of Lorem Ipsum available.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var time = setInterval(timer, 1000);
+
+        function timer() {
+            var time_obj = new Date();
+            var current_time = time_obj.toLocaleTimeString();
+
+            document.getElementById("clock").innerHTML = current_time;
+        }
+
+        function apply_btn() {
+            var colour_tag = document.getElementById("picker");
+            var colour_ = colour_tag.value;
+            // alert(colour_)
+
+            var select_tag = document.getElementById('font_family');
+            var font_ = select_tag.options[select_tag.selectedIndex].value;
+            // alert(font_);
+
+            var size_tag = document.getElementById('size');
+            var size_ = size_tag.options[size_tag.selectedIndex].value;
+            // alert(size_);
+
+            document.body.style.backgroundColor = colour_;
+            document.body.style.fontFamily = font_;
+            document.body.style.fontSize = size_;
+        }
+        // alert(time_obj);
+        // alert(current_time);
+    </script>
+</body>
+
+</html>

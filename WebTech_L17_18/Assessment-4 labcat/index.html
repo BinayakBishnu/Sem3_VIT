@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20BIT0155</title>
+    
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="jsCtrl"> 
+        <label>Start location: <input type="text" id="start" ng-model="start"/></label> 
+        <label>End location: <input type="text" id="dest" ng-model="end"/></label> 
+        <label>Non-stop? <input type="checkbox" id="stops"></label> 
+        <button id="go" ng-click="fetch()">Go!</button> 
+       
+        <div id="results" ng-hide="myvar">
+        <h1>Flights from: {{start}} {{end}}</h1>
+        <p id='data'>
+
+        </p>
+    </div>
+</div> 
+
+        <script>
+    var app = angular.module('myApp', []);
+    app.controller('jsCtrl', function ($scope) {
+        $scope.myvar = true;
+      $scope.fdata={ 
+  "Edinburgh":{ 
+  "start":"Seattle", 
+  "flights":[{"carrier":"Delta","price":812,"stops":2}, 
+  {"carrier":"Air France","price":1020,"stops":0}, 
+  {"carrier":"Air France","price":1190,"stops":3}] 
+  }, 
+    
+  "New York":{ 
+  "start":"Seattle", 
+  "flights":[{"carrier":"British Airlines","price":782,"stops":1}, 
+  {"carrier":"Delta","price":1562,"stops":2}, 
+  {"carrier":"United","price":957,"stops":1}, 
+  {"carrier":"KLM","price":687,"stops":3}, 
+  {"carrier":"KLM","price":1458,"stops":1}] 
+  }  
+  }
+
+  $scope.fetch= function () {
+    $scope.myvar = false;
+        var en= $scope.fdata[$scope.end];
+        if($scope.start==en.start){
+            var d="";
+            for(var i=0;i<en.flights.length;i++)
+            { 
+            d=d+"Price:$"+en.flights[i].price+"<br>"+"from"+en.flights[i].carrier
+            +"<br>"+"with "+en.flights[i].stops+" stop";
+            }
+            document.getElementById("data").innerHTML=d;
+        }
+
+
+      }
+});
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{
+    "p1": {
+        "id": "1",
+        "name": "Product 1",
+        "price": "Rs. 200",
+        "stock": "3",
+        "type": "type 1"
+    },
+    "p2": {
+        "id": "2",
+        "name": "Product 2",
+        "price": "Rs. 340",
+        "stock": "1",
+        "type": "type 2"
+    },
+    "p3": {
+        "id": "3",
+        "name": "Product 3",
+        "price": "Rs. 1000",
+        "stock": "31",
+        "type": "type 3"
+    },
+    "p4": {
+        "id": "4",
+        "name": "Product 4",
+        "price": "Rs. 714",
+        "stock": "0",
+        "type": "type 4"
+    },
+    "p5": {
+        "id": "5",
+        "name": "Product 5",
+        "price": "Rs. 20",
+        "stock": "10",
+        "type": "type 5"
+    },
+    "p6": {
+        "id": "6",
+        "name": "Product 6",
+        "price": "Rs. 1200",
+        "stock": "100",
+        "type": "type 6"
+    }
+}

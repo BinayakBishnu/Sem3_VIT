@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formsjs3</title>
+</head>
+
+<body>
+    <form action="#" onsubmit="return validation()">
+        <div>
+            <label for="user">Username</label>
+            <input type="text" name="user" id="user" />
+            <span id="usererror"></span>
+        </div>
+        <div>
+            <label for="pass">Password</label>
+            <input type="text" name="pass" id="pass" />
+            <span id="passerror"></span>
+        </div>
+        <div>
+            <label for="conpass">Confirm Password</label>
+            <input type="text" name="conpass" id="conpass" />
+            <span id="conpasserror"></span>
+        </div>
+        <div>
+            <label for="mobile">Mobile</label>
+            <input type="number" name="mobile" id="mobile" />
+            <span id="mobileerror"></span>
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" />
+            <span id="emailerror"></span>
+        </div>
+        <input type="submit" name="submit" value="Submit" />
+    </form>
+
+    <script type="text/javascript">
+        function validation() {
+            var user = document.getElementById('user').value;
+            var pass = document.getElementById('pass').value;
+            var conpass = document.getElementById('conpass').value;
+            var mobile = document.getElementById('mobile').value;
+            var email = document.getElementById('email').value;
+
+            if (user == "") {
+                document.getElementById('usererror').innerHTML = "Please enter username";
+                return false;
+            }
+            else if (user.length > 20) {
+                document.getElementById('usererror').innerHTML = "Not more than 20 characters";
+                return false;
+            }
+            else {
+                document.getElementById('usererror').innerHTML = "";
+            }
+
+            if (pass == "") {
+                document.getElementById('passerror').innerHTML = "Please enter password";
+                return false;
+            }
+            else if (pass.length < 6) {
+                document.getElementById('passerror').innerHTML = "Not less than 6 characters";
+                return false;
+            }
+            else {
+                document.getElementById('passerror').innerHTML = "";
+            }
+
+            if (conpass == "") {
+                document.getElementById('conpasserror').innerHTML = "Please enter password";
+                return false;
+            }
+            else if (pass != conpass) {
+                document.getElementById('conpasserror').innerHTML = "Not matching";
+                return false;
+            }
+            else {
+                document.getElementById('conpasserror').innerHTML = "";
+            }
+
+            if (mobile == "") {
+                document.getElementById('mobileerror').innerHTML = "Please enter mobile";
+                return false;
+            }
+            else if (mobile.length != 10) {
+                document.getElementById('mobileerror').innerHTML = "10 digits only";
+                return false;
+            }
+            else {
+                document.getElementById('mobileerror').innerHTML = "";
+            }
+
+            var emailregex = "/^[a-zA-Z]+@[a-zA-Z]+.[a-zA-Z]+$/";
+            if (email == "") {
+                document.getElementById('emailerror').innerHTML = "Please enter email";
+                return false;
+            }
+            else if (!email.match(emailregex)) {
+                document.getElementById('emailerror').innerHTML = "Wrong format";
+                return false;
+            }
+            else {
+                document.getElementById('emailerror').innerHTML = "";
+            }
+        }
+    </script>
+</body>
+
+</html>

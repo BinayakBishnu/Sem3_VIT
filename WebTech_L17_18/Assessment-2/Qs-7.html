@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Exercise 7</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <label for="user_input">Divisible by: </label>
+    <input id="user_input" type="text" placeholder="Enter number" name="user_input" />
+    <input id="input_btn" type="submit" name="input_btn" value="Delete" />
+    <br /><br />
+
+    <label for="given_btns">Click a button: </label>
+    <input class="given_btns given_btns1" type="button" name="btn" value="11" />
+    <input class="given_btns given_btns2" type="button" name="btn" value="22" />
+    <input class="given_btns given_btns3" type="button" name="btn" value="34" />
+    <input class="given_btns given_btns4" type="button" name="btn" value="42" />
+    <input class="given_btns given_btns5" type="button" name="btn" value="50" />
+    <input class="given_btns given_btns6" type="button" name="btn" value="63" />
+    <input class="given_btns given_btns7" type="button" name="btn" value="71" />
+    <input class="given_btns given_btns8" type="button" name="btn" value="85" />
+    <input class="given_btns given_btns9" type="button" name="btn" value="94" />
+    <input class="given_btns given_btns10" type="button" name="btn" value="103" />
+    <br /><br />
+
+    <div id="output"></div>
+
+    <script type="text/javascript">
+        $("#input_btn").click(function () {
+            var input_ = $("#user_input").val();
+            // alert(input_);
+            var count_ = 0;
+            for (var i = 1; i <= 10; i++) {
+                var n = "given_btns" + i;
+                console.log(n);
+                if ($('.' + n).val() % input_ == 0) {
+                    console.log("Divisible, removing...");
+                    $('.' + n).css('display', 'none');
+                    count_ += 1;
+                }
+                else {
+                    console.log("Not divisible");
+                }
+            }
+            $('#output').html('<p>' + count_ + ' removed</p>');
+        });
+    </script>
+</body>
+
+</html>

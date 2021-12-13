@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Exercise 9</title>
+    <script src="Qs-9.js"></script>
+</head>
+
+<body>
+    <center>
+        <table cellspacing="4px" cellpadding="6px"
+            style="background-color: rgb(126, 126, 156); padding:0px; margin:0px">
+            <form name="reg_form" onsubmit="return validate_form()">
+                <thead style="background-color: rgb(59, 59, 104);">
+                    <tr>
+                        <td align="center" colspan="2">Event Registration Form</td>
+                    </tr>
+                </thead>
+
+                <tfoot style="background-color: rgb(59, 59, 104);">
+                    <tr>
+                        <td colspan="2" style="padding-left: 80px;">
+                            <input type="submit" value="Submit" />
+                        </td>
+                    </tr>
+                </tfoot>
+
+                <tbody>
+                    <tr>
+                        <td>First Name</td=>
+                        <td style="padding-right: 50px;">
+                            <input type="text" name="fname" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Last Name</td>
+                        <td style="padding-right: 50px;">
+                            <input type="text" name="lname" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Mailing Address</td>
+                        <td style="padding-right: 50px;">
+                            <input type="text" name="addr" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>City</td>
+                        <td style="padding-right: 50px;">
+                            <input type="text" name="city" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>State</td>
+                        <td style="padding-right: 50px;">
+                            <select name="state">
+                                <option>West Bengal</option>
+                                <option>Delhi</option>
+                                <option>Tamil Nadu</option>
+                                <option>Gujrat</option>
+                                <option>Nagaland</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Zip Code</td>
+                        <td style="padding-right: 50px;">
+                            <input type="text" name="zip" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <hr width="90%" style="border: 1px dashed" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Are you speaking at<br />the conference?</td>
+                        <td style="padding-right: 50px;">
+                            <input type="radio" id="yes" name="yes" /><label for="yes">Yes</label>
+                            <input type="radio" id="no" name="no" /><label for="no">No</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Conference Pass</td>
+                        <td style="padding-right: 50px;">
+                            <input type="radio" id="1day" name="onedaypass" /><label for="1day">1-day pass</label><br />
+                            <input type="radio" id="2day" name="twodaypass" /><label for="2day">2-day pass</label><br />
+                            <input type="radio" id="3day" name="threedaypass" /><label for="3day">3-day
+                                pass</label><br />
+                            <input type="radio" id="4day" name="fourdaypass" /><label for="4day">4-day pass</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <hr width="90%" style="border: 1px dashed" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Meal Preference</td>
+                        <td style="padding-right: 50px;">
+                            <select name="state">
+                                <option>Vegetarian</option>
+                                <option>Non-Vegetarian</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </form>
+        </table>
+    </center>
+</body>
+
+</html>
